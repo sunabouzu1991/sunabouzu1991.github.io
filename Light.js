@@ -1,4 +1,4 @@
-import { AmbientLight, DirectionalLight } from "three";
+import { AmbientLight, DirectionalLight } from "https://cdn.jsdelivr.net/npm/three@v0.167.1/build/three.module.js";
 
 
 export default class Scenelight {
