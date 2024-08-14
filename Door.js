@@ -1,5 +1,5 @@
 import { FBXLoader } from './FBXloader/FBXLoader.js';
-import { LoadingManager, Mesh, MeshPhongMaterial, Scene, TextureLoader, Vector3 } from 'https://cdn.jsdelivr.net/npm/three@v0.167.1/build/three.module.js';
+import { LoadingManager, Mesh, MeshPhysicalMaterial, Scene, TextureLoader, Vector3 } from 'https://cdn.jsdelivr.net/npm/three@v0.167.1/build/three.module.js';
 
 export default class Door {
     /** базовый размер двери @type {Vector3} */
@@ -42,14 +42,20 @@ export default class Door {
     #load (object) {
 	const loaderTexture = new TextureLoader();
         const texture = loaderTexture.load('./public/door/Door.png');
-        const door_material1 = new MeshPhongMaterial({
+        const door_material = new MeshPhysicalMaterial({
             map: texture,
+            roughness:.6,
+            metalness: 1
         });
-        const door_material2 = new MeshPhongMaterial({
+        const handle_material = new MeshPhysicalMaterial({
             map: texture,
+            roughness:.3,
+            metalness: 1
         });
-        const door_material3 = new MeshPhongMaterial({
+        const lock_material = new MeshPhysicalMaterial({
             map: texture,
+            roughness:.5,
+            metalness: 1
         });
 
         object.traverse(
@@ -65,27 +71,27 @@ export default class Door {
                         model.rotation.set(0,0,0);
                         model.geometry.rotateX(-Math.PI/2);
                         model.geometry.computeBoundingBox();
-                        model.material = door_material1;
+                        model.material = door_material;
                         model.geometry.boundingBox.getSize(this.#size);
                         break;
                     
                     case "Handle1":
                         this.#handle1 = model;
-                        model.material = door_material2;
+                        model.material = handle_material;
                         model.position.divideScalar(100);
                         this.#handle1_pos.copy(model.position);
                         break;
                     
                     case "Handle2":
                         this.#handle2 = model;
-                        model.material = door_material2;
+                        model.material = handle_material;
                         model.position.divideScalar(100);
                         this.#handle2_pos.copy(model.position);
                         break;
 
                     case "Lock":
                         this.#lock = model;
-                        model.material = door_material3;
+                        model.material = lock_material;
                         model.position.divideScalar(100);
                         this.#lock_pos.copy(model.position);
                         break;
