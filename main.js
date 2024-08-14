@@ -1,4 +1,3 @@
-import './style.css';
 import * as THREE from 'three';
 import Camcontrol from './Camcontrol.js';
 import Door from './Door.js';
