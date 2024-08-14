@@ -1,6 +1,6 @@
-import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
-import { LoadingManager, Mesh, MeshPhongMaterial, Scene, TextureLoader, Vector3 } from 'three';
-import fbxDoor from './public/door/Door.fbx?url';
+import { FBXLoader } from 'https://cdn.jsdelivr.net/npm/three@v0.167.1/examples/jsm/loaders/FBXLoader.js';
+import { LoadingManager, Mesh, MeshPhongMaterial, Scene, TextureLoader, Vector3 } from 'https://cdn.jsdelivr.net/npm/three@v0.167.1/build/three.module.js';
+import fbxDoor from './public/door/Door.fbx';
 import imgDoor from './public/door/Door.png';
 
 export default class Door {
