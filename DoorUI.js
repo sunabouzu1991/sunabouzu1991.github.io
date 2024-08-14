@@ -1,4 +1,4 @@
-import Door from "./door";
+import Door from "./Door.js";
 import { MathUtils } from "https://cdn.jsdelivr.net/npm/three@v0.167.1/build/three.module.js";
 
 export default class DoorUI {
