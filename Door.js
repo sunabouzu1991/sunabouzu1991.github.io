@@ -1,7 +1,5 @@
 import { FBXLoader } from 'https://cdn.jsdelivr.net/npm/three@v0.167.1/examples/jsm/loaders/FBXLoader.js';
 import { LoadingManager, Mesh, MeshPhongMaterial, Scene, TextureLoader, Vector3 } from 'https://cdn.jsdelivr.net/npm/three@v0.167.1/build/three.module.js';
-import fbxDoor from './public/door/Door.fbx';
-import imgDoor from './public/door/Door.png';
 
 export default class Door {
     /** базовый размер двери @type {Vector3} */
@@ -37,13 +35,13 @@ export default class Door {
         const manager = new LoadingManager();
         const loader = new FBXLoader( manager );
 
-        loader.load( fbxDoor, this.#load.bind(this) );
+        loader.load( './public/door/Door.fbx', this.#load.bind(this) );
     }
 
     /** @param {Mesh} object */
     #load (object) {
-		const loaderTexture = new TextureLoader();
-        const texture = loaderTexture.load(imgDoor);
+	const loaderTexture = new TextureLoader();
+        const texture = loaderTexture.load('./public/door/Door.png');
         const door_material1 = new MeshPhongMaterial({
             map: texture,
         });
