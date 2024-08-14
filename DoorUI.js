@@ -1,5 +1,5 @@
 import Door from "./door";
-import { MathUtils } from "three";
+import { MathUtils } from "https://cdn.jsdelivr.net/npm/three@v0.167.1/build/three.module.js";
 
 export default class DoorUI {
     /** высота @type {HTMLInputElement} */
