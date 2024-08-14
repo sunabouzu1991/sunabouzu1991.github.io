@@ -1,5 +1,5 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@v0.167.1/build/three.module.js';
-import Camcontrol from '/Camcontrol.js';
+import Camcontrol from 'Camcontrol.js';
 // import Door from './Door.js';
 // import DoorUI from './DoorUI.js';
 // import Scenelight from './Light.js';
