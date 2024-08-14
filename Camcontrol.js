@@ -1,4 +1,4 @@
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@v0.167.1/examples/jsm/Addons.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@v0.167.1/examples/jsm/controls/OrbitControls.js';
 
 export default class Camcontrol {
     /** @type {OrbitControls} */
